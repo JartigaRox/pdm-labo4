@@ -15,7 +15,7 @@ fun HomeScreen(onNavigateToList: () -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Bienvenido al Lab 4",
+            text = "Bienvenido al Lab 5",
             style = MaterialTheme.typography.headlineLarge
         )
 

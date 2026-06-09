@@ -10,10 +10,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.pdmlabo4.model.task
+import com.example.pdmlabo4.model.Task
 import com.example.pdmlabo4.viewmodel.GeneralViewModel
 
 @Composable
@@ -40,8 +39,7 @@ fun TODOScreen(viewModel: GeneralViewModel) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = {
-            val nuevaTarea = task.Task(
-                id = tasks.size + 1,
+            val nuevaTarea = Task(
                 title = "Tarea #${tasks.size + 1}",
                 description = "Descripción de prueba para el laboratorio"
             )
@@ -76,11 +74,17 @@ fun TODOScreen(viewModel: GeneralViewModel) {
                         .fillMaxWidth()
                         .height(100.dp)
                 ) {
-                    Text(
-                        text = "ID: ${task.id} - ${task.title}",
-                        style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
-                    )
+                    Column(modifier = Modifier.padding(8.dp)) {
+                        Text(
+                            text = "ID: ${task.id} - ${task.title}",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = task.description,
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                    }
                 }
             }
         }
