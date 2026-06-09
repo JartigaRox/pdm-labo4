@@ -25,18 +25,6 @@ class GeneralViewModel(private val appDao: AppDao) : ViewModel() {
         }
     }
 
-    fun deleteTask(task: Task) {
-        viewModelScope.launch {
-            appDao.deleteTask(task)
-        }
-    }
-
-    fun updateTask(task: Task) {
-        viewModelScope.launch {
-            appDao.updateTask(task)
-        }
-    }
-
     companion object {
         fun Factory(appDao: AppDao): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
             @Suppress("UNCHECKED_CAST")

@@ -31,7 +31,7 @@ fun TODOScreen(viewModel: GeneralViewModel) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Laboratorio 4: Lista de Tareas",
+            text = "Laboratorio 5: Lista de Tareas",
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold
         )
